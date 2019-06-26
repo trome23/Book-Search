@@ -1,26 +1,27 @@
-// Our newest addition to the dependency family
+
 var mongoose = require("mongoose");
+var express = require("express")
+var bodyParser = require("body-parser")
 
-// Requiring the `Example` model for accessing the `examples` collection
 var BookModel = require("./model/bookModel");
-var express = require("express");
 
-var PORT = 3000;
+
+var PORT = process.env.PORT || 3000;
 
 // Initialize Express
 var app = express();
 
 // Configure middleware
-
-// Parse request body as JSON
+app.use(bodyParser.json())
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Make public a static folder
 app.use(express.static("public"));
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/googlebooks", { useNewUrlParser: true });
+mongoose
+  .connect("mongodb://localhost/googlebooks", { useNewUrlParser: true })
+  .then(() => console.log(`MongoDB Connected...`))
+  .catch(err=>console.log(err))
 
-  app.listen(PORT, function() {
-    console.log("App running on port " + PORT + "!");
-  });
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
