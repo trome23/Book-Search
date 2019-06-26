@@ -1,15 +1,14 @@
+const mongoose = require("mongoose");
+const express = require("express")
+const bodyParser = require("body-parser")
 
-var mongoose = require("mongoose");
-var express = require("express")
-var bodyParser = require("body-parser")
-
-var BookModel = require("./model/bookModel");
+const books = require("./routes/api/books");
 
 
-var PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 // Initialize Express
-var app = express();
+const app = express();
 
 // Configure middleware
 app.use(bodyParser.json())
@@ -23,5 +22,8 @@ mongoose
   .connect("mongodb://localhost/googlebooks", { useNewUrlParser: true })
   .then(() => console.log(`MongoDB Connected...`))
   .catch(err=>console.log(err))
+
+//Use Routes
+app.use('/api/books/', books)  
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
