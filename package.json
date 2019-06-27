@@ -1,33 +1,29 @@
 {
   "name": "google-book-search",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "search books on Google API",
+  "main": "server.js",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "starts": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trome23/Book-Search.git"
+  },
+  "author": "Tyson Romero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trome23/Book-Search/issues"
+  },
+  "homepage": "https://github.com/trome23/Book-Search#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "concurrently": "^4.1.1",
     "express": "^4.17.1",
-    "mongoose": "^5.6.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
-  },
-  "scripts": {
-    "start": "node server.js",
-    "server": "nodemon server.js"
-   
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "mongoose": "^5.6.1"
   }
 }
