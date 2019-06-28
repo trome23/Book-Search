@@ -27,7 +27,7 @@ class AppNavbar extends Component {
                     <Container>
                         <NavbarBrand href="/">Google Book Search</NavbarBrand>
                         <NavbarToggler onClick={this.toggle} />
-                        <Collapse isOpen={this.state.isOpen}>
+                        <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className="ml-auto" navbar>
                                 <NavItem>
                                     <NavLink href="https://github.com/trome23">
