@@ -25,13 +25,18 @@ class AppNavbar extends Component {
             <div>
                 <Navbar color="dark" dark expand="sm" className="mb-5">
                     <Container>
-                        <NavbarBrand href="/">Google Book Search</NavbarBrand>
+                        <NavbarBrand href="/">Google Books</NavbarBrand>
                         <NavbarToggler onClick={this.toggle} />
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className="ml-auto" navbar>
                                 <NavItem>
-                                    <NavLink href="https://github.com/trome23">
-                                        Github
+                                    <NavLink href="../components/SearchPage.js">
+                                        Search
+                                    </NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink href="../components/SavedPage.js">
+                                        Saved
                                     </NavLink>
                                 </NavItem>
                             </Nav>
