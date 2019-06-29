@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Container, ListGroup, ListGroupItem, Button, Form, FormGroup, Label, Col, Input} from 'reactstrap';
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
+import Example from './Carousel'
 
 
 class Search extends Component {
@@ -15,7 +16,7 @@ class Search extends Component {
     }
 
     handleSearch= () => {
-
+       
     }
 
     render() {
@@ -38,8 +39,9 @@ class Search extends Component {
                     Search
                 </Button>
                 </Form>
+                <br/>
                 <div>
-                    
+                    <Example />
                 </div>
             </Container>
         )
