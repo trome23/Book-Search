@@ -30,12 +30,12 @@ class AppNavbar extends Component {
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className="ml-auto" navbar>
                                 <NavItem>
-                                    <NavLink href="../components/SearchPage.js">
+                                    <NavLink href="/">
                                         Search
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink href="../components/SavedPage.js">
+                                    <NavLink href="/saved">
                                         Saved
                                     </NavLink>
                                 </NavItem>
