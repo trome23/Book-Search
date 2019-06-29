@@ -4,6 +4,20 @@ import {CSSTransition, TransitionGroup} from 'react-transition-group';
 
 
 class Search extends Component {
+    state = {
+        books: [],
+        searchTerm: ""
+    }
+
+
+    handleSave = () => {
+
+    }
+
+    handleSearch= () => {
+
+    }
+
     render() {
         return(
             <Container>
@@ -18,12 +32,15 @@ class Search extends Component {
                     color="dark"
                     stye={{marginBottom: '2rem'}}
                     onClick={() => {
-                       
+                       this.handleSearch()
                     }}
                 >
                     Search
                 </Button>
                 </Form>
+                <div>
+                    
+                </div>
             </Container>
         )
     }
