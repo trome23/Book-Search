@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, ListGroup, ListGroupItem, Button} from 'reactstrap';
+import { Container, ListGroup, ListGroupItem, Button, Form, FormGroup, Label, Col, Input} from 'reactstrap';
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
 
 
@@ -7,7 +7,23 @@ class Search extends Component {
     render() {
         return(
             <Container>
-                <h1>Here's the searchpage!</h1>
+                 <Form>
+                    <FormGroup row>
+                    <Label for="searchBar" sm={2}>Title of Book</Label>
+                        <Col sm={10}>
+                            <Input type="text" name="search" id="searchBar" placeholder="Enter book name!" />
+                        </Col>
+                    </FormGroup>
+                <Button
+                    color="dark"
+                    stye={{marginBottom: '2rem'}}
+                    onClick={() => {
+                       
+                    }}
+                >
+                    Search
+                </Button>
+                </Form>
             </Container>
         )
     }

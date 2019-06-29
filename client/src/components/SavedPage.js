@@ -7,8 +7,8 @@ class Saved extends Component {
     render() {
         return(
             <Container>
-            <h1>Here's the Saved Page!</h1>
-        </Container>
+                <h1>Here's the SAVED Page!</h1>
+            </Container>
         )
     }
 }
