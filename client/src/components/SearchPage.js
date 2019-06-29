@@ -1,22 +1,31 @@
 import React, { Component } from 'react';
 import { Container, ListGroup, ListGroupItem, Button, Form, FormGroup, Label, Col, Input} from 'reactstrap';
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
-import Example from './Carousel'
+import BookList from './List'
+import axios from 'axios';
 
 
 class Search extends Component {
     state = {
         books: [],
-        searchTerm: ""
+        searchTerm: "",
     }
 
 
-    handleSave = () => {
-
+    handleSave = (event) => {
+        this.setState({books: event.target.books})
     }
 
     handleSearch= () => {
-       
+       //only need this.searchterms from state
+        axios.get('/api/books')
+        .then(res => {           
+            console.log(res.data[0].authors);
+                         
+             this.setState({
+                 books: res.data
+             })
+        })
     }
 
     render() {
@@ -41,7 +50,7 @@ class Search extends Component {
                 </Form>
                 <br/>
                 <div>
-                    <Example />
+                    <BookList onBookList = {this.handleSearch}/>
                 </div>
             </Container>
         )
