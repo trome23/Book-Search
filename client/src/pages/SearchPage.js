@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, ListGroup, ListGroupItem, Button, Form, FormGroup, Label, Col, Input} from 'reactstrap';
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
-import BookList from './List'
+import BookList from '../components/List'
 import axios from 'axios';
 
 
