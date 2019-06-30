@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import AppNavBar from './components/AppNavBar'
-import Search from './components/SearchPage'
-import Saved from './components/SavedPage'
+import Search from './pages/SearchPage'
+import Saved from './pages/SavedPage'
 import { Container, ListGroup, ListGroupItem, Button} from 'reactstrap';
 
 import 'bootstrap/dist/css/bootstrap.min.css';

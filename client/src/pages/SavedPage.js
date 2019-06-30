@@ -27,7 +27,9 @@ class Saved extends Component {
                 <div>
                     {this.state.books.map(book=> {
                         return(
-                            <h3 key={book._id}>{book.authors}</h3>
+                            <ListGroup key={book._id}>
+                            <ListGroupItem>{book.authors}<br/>{book.title}</ListGroupItem>
+                            </ListGroup>
                         )
                     })}
                 </div>
