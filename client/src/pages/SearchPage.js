@@ -16,16 +16,24 @@ class Search extends Component {
         this.setState({books: event.target.books})
     }
 
-    handleSearch= () => {
-       //only need this.searchterms from state
-        axios.get('/api/books')
-        .then(res => {           
-            console.log(res.data[0].authors);
-                         
-             this.setState({
-                 books: res.data
-             })
+    handleSearch= (event) => {
+        this.setState({
+            searchTerm : event.target.value
         })
+        console.log(this.state.searchTerm); 
+    }
+
+    handleSearchGo = () => {  
+        const api = 'https://www.googleapis.com/books/v1/volumes?q='
+        const searchBook = this.state.searchTerm
+        const apiSearch = api + searchBook
+        console.log(apiSearch);
+        
+        fetch(apiSearch, {method: 'GET'})
+        .then(res =>res.json())
+        .then(json=>          
+            console.log(json)
+        )
     }
 
     render() {
@@ -35,18 +43,18 @@ class Search extends Component {
                     <FormGroup row>
                     <Label for="searchBar" sm={2}>Title of Book</Label>
                         <Col sm={10}>
-                            <Input type="text" name="search" id="searchBar" placeholder="Enter book name!" />
+                            <Input type="text" name="search" id="searchBar" placeholder="Enter book name!" value={this.state.searchTerm} onChange={(e) => this.handleSearch(e)} />
                         </Col>
                     </FormGroup>
-                <Button
-                    color="dark"
-                    stye={{marginBottom: '2rem'}}
-                    onClick={() => {
-                       this.handleSearch()
-                    }}
-                >
-                    Search
-                </Button>
+                    <Button
+                        color="dark"
+                        stye={{marginBottom: '2rem'}}
+                        onClick={() => {
+                        this.handleSearchGo()
+                        }}
+                    >
+                        Search
+                    </Button>
                 </Form>
                 <br/>
                 <div>
